@@ -1,0 +1,259 @@
+﻿@page "/"
+<h1 class="text-center">Mon CV </h1>
+
+
+
+<body>
+    <?php include('menu.php'); ?>
+    <!--include menu.php-->
+    <section>
+        <div id="about">
+            <!-- A propos de moi-->
+            <h1 id="aboutLink">A mon propos </h1>
+            <div class="updown" @bind-="AMonPropos">
+                <h2>Motivations:</h2>
+                <p>
+                    Après une expérience de 5 années dans l'industrie aéronautique, dans la gestion de projet
+                    et la qualité, j’ai décidé d’élargir mes horizons en me spécialisant dans le développement
+                    web.
+                    C'est, en effet, lorsque j'ai eu l’opportunité de gérer des projets informatiques (google site,
+                    vba..) que je me suis le plus épanoui dans mon travail.
+                    Depuis plusieurs mois déjà, je me forme sur les langages html/CSS/JS/JQuery/PHP/SQL et depuis peu POO, tout en suivant les cours en ligne OpenClassrooms.
+                    <a href="https://github.com/RaphCamp" target="_blank" rel="noopener noreferrer">Mon Github</a>
+                </p>
+                <h2>Projet professionnel:</h2>
+                <p>
+                    À la recherche d’une entreprise, aussi innovante que dynamique pour effectuer ma
+                    formation de 12 mois en alternance, je suis prêt à relever de nouveaux défis, les vôtres, en
+                    tant que Développeur web.
+                </p>>
+
+
+            </div>
+        </div>
+
+        <div id="training">
+            <!-- Formations -->
+            <h1>Formations</h1>
+            <div class="updown">
+                <div class="job">
+                    <!-- TSM -->
+                    <p>
+                        <a href="https://tsm-education.fr/formations/master-2-lean-management-et-qualite" target="blank"><img src="image/tsm.jpg" alt="logo tsm"></a>
+                    </p>
+                    <div>
+                        <h2>Master 2 Lean Management Qualité</h2>
+                        <h3>2019 - 2020</h3>
+                    </div>
+                </div>
+                <div class="job">
+                    <!-- CESI -->
+                    <p>
+                        <a href="https://catalogue.cesi.fr/manager-de-direction-operationnelle-innovation-et-experience-client-2160890/" target="blank"><img src="image/cesi.jpg" alt="logo tsm"></a>
+                    </p>
+                    <div>
+                        <h2>Master 1 Responsable performances industrielles et innovation</h2>
+                        <h3>2017 - 2019</h3>
+                    </div>
+                </div>
+                <div class="job">
+                    <!--Licence -->
+                    <p>
+                        <a href="https://www.univ-tlse3.fr/licence-pro-parcours-techniques-industrielles-en-aeronautique-et-spatial-tias" target="blank"><img src="image//tias.jpg" alt="logo tias"></a>
+                    </p>
+                    <div>
+                        <h2>Licence pro TIAS</h2>
+                        <h3>2016 - 2017</h3>
+                    </div>
+                </div>
+                <div class="job">
+                    <!-- DUT -->
+                    <p>
+                        <a href="https://www.univ-tlse3.fr/dut-genie-mecanique-et-productique" target="blank"><img src="image/dut.jpg" alt="logo dut"></a>
+                    </p>
+                    <div>
+                        <h2>DUT génie mécanique</h2>
+                        <h3>2013 - 2015</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="xp">
+            <!-- Expériences -->
+            <h1>Expériences</h1>
+            <div class="updown">
+                <div>
+                    <!-- airbus -->
+                    <div class="job">
+                        <p>
+                            <a href="https://www.airbus.com/" target="blank"><img src="image/Airbus.jpg" alt="logo airbus"></a>
+                        </p>
+                        <div>
+                            <h2>Ingénieur Lean support supply chain (POSO)</h2>
+                            <h3>Octobre 2019 - Juin 2020 (contrat d'alternance)</h3>
+                        </div>
+                    </div>
+                    <h4>Contexte</h4>
+                    <p>
+                        Le service procurement d'Airbus souhaitait développer les connaissances de son personnel et optimiser le temps de formation de chacun.
+                        Par ailleurs, le service POSO auquel j'étais rattaché, rencontrait des difficultés de communication avec les équipes qu'il devait supporter.
+                    </p>
+                    <h4>Missions</h4>
+                    <ul>
+                        <li>Développement de matrices de compétence avec des indicateurs graphiques via Excel.</li>
+                        <li>Mise en place d'un processus de formation interne</li>
+                        <li>Création d'une plateforme (google site) d'échange et de communication.</li>
+
+                    </ul>
+                    <h4>Résultats</h4>
+                    <ul>
+                        <li>Le secteur aérostructure du procurement Airbus (POS) dont je m'occupais a pu déterminer un plan de formation pour chacun de ses membres.</li>
+                        <li>Le projet d'amélioration du processus de formation n'a pas pris de retard significatif malgré la période de COVID-19.</li>
+                        <li>J'ai pu présenter la plateforme d'échange avant mon départ à tous les collaborateurs de POS. En quelques jours la plateforme s'est vue être de plus en plus utilisée et susciter de l’enthousiasme.</li>
+
+                    </ul>
+                </div>
+                <div>
+                    <!-- mechaers-->
+                    <div class="job">
+                        <p>
+                            <a href="http://www.mecachrome.com/" target="blank"><img src="image/Mecahers.png" alt="logo airbus" height="80"></a>
+                        </p>
+                        <div>
+                            <h2>Technicien procédés spéciaux</h2>
+                            <h3>Septembre 2016 - Juin 2019 (contrat d'alternance)</h3>
+                        </div>
+                    </div>
+                    <h4>Contexte</h4>
+                    <p>
+                        Sous-traitant Airbus de rang 1, Mécahers réalise de nombreux procédés spéciaux, allant du traitement thermique, au traitement de surface, en passant par le montage.
+                    </p>
+                    <h4>Missions</h4>
+                    <ul>
+                        <li>Préparation à l'audit NADCAP pour le traitement thermique sur alliages d’aluminium (étude de projet; inscription au NADCAP; audits internes; actions correctives; achat de matériel).</li>
+                        <li>Chantier Lean dans l'atelier peinture afin d'optimiser les déplacements. </li>
+                        <li>Mise en place de systèmes Kanban</li>
+                        <li>Optimisation des perçages sur une machine de découpe laser avec un plan d'expérience.</li>
+                        <li>Rédaction de procédures, qualifications, maintiens de qualification et amélioration des procédés spéciaux.</li>
+                        <li>Conception CAO et industrialisation d'un outillage support pour la réalisation des opérations de traitements thermiques.</li>
+                    </ul>
+                    <h4>Résultats</h4>
+                    <ul>
+                        <li>Mon contrat s'est terminé 3 mois avant l'audit NADCAP. Cependant j'ai eu le temps de réaliser toutes les actions correctives et le nouveau responsable procédés spéciaux, arrivé peu de temps avant la date de l'audit, m'a fait savoir que l'audit s'est bien déroulé avec seulement 4 non conformités mineures trouvées, et Mécahers a pu obtenir l'accréditation.</li>
+                        <li>En permettant à l'employé de la logistique de placer les articles directement à la bonne place, j'ai pu faire économiser 2 heures de rangement quotidiennes au chef d'atelier peinture, soit un coût de non valeur ajoutée de minimum 2500€/mois.</li>
+                    </ul>
+                </div>
+                <div>
+                    <!-- ctms-->
+                    <div class="job">
+                        <p>
+                            <a href="http://www.ctms-affutage.com/fr/" target="blank"><img id="ctms" src="image/ctms.jpg" alt="logo airbus" height="80"></a>
+                        </p>
+                        <div>
+                            <h2>Opérateur & contrôleur </h2>
+                            <h3>Février 2016 - Août 2016 (CDI) </h3>
+                        </div>
+                    </div>
+                    <h4>Contexte</h4>
+                    <p>
+                        CTMS est une TPE spécialisée dans l’affûtage d'outils tranchants (fraises mères,couteaux..)
+                    </p>
+                    <h4>Missions</h4>
+                    <ul>
+                        <li>Décapage chimique et affûtage des outils</li>
+                        <li>Contrôle après affûtage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="skill">
+            <!-- Compétences -->
+            <h1>Compétences</h1>
+            <div class="updown" id="competences">
+                <div>
+                    <h2>Bureautiques</h2>
+                    <ul>
+                        <li>Pack office</li>
+                        <li>Outils Google</li>
+                        <li>Outils CAO</li>
+                        <li>HTML / CSS</li>
+                        <li>JS / JQuery / PHP / SQL (débutant)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Industrielles</h2>
+                    <ul>
+                        <li>Amélioration continue, Lean, Projet</li>
+                        <li>Qualité (procédures,Normes,Audits)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Langues</h2>
+                    <ul>
+                        <li>Français </li>
+                        <li>Anglais (Niveau B2)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="hobby">
+            <!-- Hobbies -->
+            <h1>Hobbies</h1>
+            <div id="hobbies" class="updown">
+                <div>
+
+                    <h2>peinture</h2>
+                    <div id="insta">
+                        <div class="elfsight-app-ce41ab19-94be-4589-a5a2-05b93d32442d"></div>
+                    </div>
+
+                    <!-- <p>
+                        <img src="image/bell.jpg" alt="peinture de cloche en or" width="90">
+                    </p>
+                    <p>
+                        <img class="logo" src="image/insta.png" alt="logo instagram">
+                        <a href="http://instagram.com/raphetfanny" target="blank">lien instagram</a>
+                    </p> -->
+                </div>
+                <div>
+                    <h2>Musique</h2>
+                    <p>
+                        <img src="image/piano.jpg" alt="piano" width="100">
+                    </p>
+                </div>
+                <div>
+                    <h2>Manga</h2>
+                    <p>
+                        <img src="image/Zoro.jpg" alt="zoro de onepiece" height="100">
+                    </p>
+                </div>
+                <div>
+                    <h2>jeux vidéo / montage</h2>
+                    <p>
+                        <img class="logo2" src="image/pc.webp" alt="ordinateur" width="100">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <!-- contact -->
+        <h1 id="contact">Contact</h1>
+        <h2>adresse email:</h2>
+        <p>raphael.campagnac@live.fr</p>
+
+    </footer>
+</body>
+
+
+@code {
+    private void SlideUp()
+    {
+
+    }
+}
+

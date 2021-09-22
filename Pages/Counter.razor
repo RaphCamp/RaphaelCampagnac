@@ -1,0 +1,98 @@
+﻿@page "/counter"
+
+
+<EditForm EditContext="@EditContext">
+    <DataAnnotationsValidator />
+
+    <div class="form-group">
+        <label for="name">Enter your Name: </label>
+        <InputText Id="name" Class="form-control" @bind-Value="@person.Name"></InputText>
+        <ValidationMessage For="@(() => person.Name)" />
+
+    </div>
+    <div class="form-group">
+        <label for="body">Select your pet: </label>
+        <InputSelect @bind-Value="@person.Pet">
+            <option value="Cat">Cat</option>
+            <option value="Dog">Dog</option>
+            <option value="Horse">Horse</option>
+            <option value="Lion">Lion</option>
+        </InputSelect>
+        <ValidationMessage For="@(() => person.Pet)" />
+    </div>
+
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</EditForm>
+
+
+@code
+ {
+    private EditContext EditContext;
+    private Person person = new Person();
+
+
+    protected override void OnInitialized()
+    {
+        EditContext = new EditContext(person);
+        EditContext.OnFieldChanged += EditContext_OnFieldChanged;
+
+        base.OnInitialized();
+    }
+
+    // Note: The OnFieldChanged event is raised for each field in the model
+    private void EditContext_OnFieldChanged(object sender, FieldChangedEventArgs e)
+    {
+        if (e.FieldIdentifier.FieldName == "Pet")
+        {
+
+            person.Name = person.Pet;
+
+        }
+    }
+
+
+    public class Person
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Pet { get; set; }
+    }
+}
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+<button @onclick="Toggle">
+    @if (isMoving)
+    {
+        <text>Stop Spinning</text>
+    }
+    else
+    {
+        <text>Start Spinning</text>
+    }
+</button>
+
+@code {
+    private bool isMoving = true;
+
+    private void Toggle()
+    {
+        isMoving = !isMoving;
+        Console.WriteLine(DateTime.Now);
+    }
+}
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
