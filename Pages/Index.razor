@@ -8,9 +8,9 @@
     <?php include('menu.php'); ?>
     <!--include menu.php-->
     <section>
-        <Animation Effect="@Effect.FlipInX" Speed="@Speed.Slow" Enabled="@About.AnimOn" >
-            <Animation Effect="@Effect.SlideOutUp" Speed="@Speed.Slow" Enabled="@About.AnimOff" OnAnimationEnd="@Chapitre.Reset">
-                <div id="about" style="display:@About">
+        <Animation Effect="@Effect.SlideInUp" Speed="@Speed.Slow" Enabled="@About.AnimOn" >
+            <Animation Effect="@Effect.SlideOutUp" Speed="@Speed.Slow" Enabled="@About.AnimOff" OnAnimationEnd="@About.GoInvisible">
+                <div id="about" style="display:@About.Visibility">
                     <!-- A propos de moi-->
                     <h1 id="aboutLink">A mon propos </h1>
                     <div class="updown" @bind-="AMonPropos">
@@ -36,9 +36,9 @@
                 </div>
             </Animation>
         </Animation>
-        <Animation Effect="@Effect.FlipInX" Speed="@Speed.Slow" Enabled="@Training.AnimOn">
-            <Animation Effect="@Effect.SlideOutUp" Speed="@Speed.Slow" Enabled="@Training.AnimOff" OnAnimationEnd="@Chapitre.Reset">
-                <div id="training">
+        <Animation Effect="@Effect.SlideInLeft" Speed="@Speed.Slow" Enabled="@Training.AnimOn">
+            <Animation Effect="@Effect.SlideOutUp" Speed="@Speed.Slow" Enabled="@Training.AnimOff" OnAnimationEnd="@Training.GoInvisible">
+                <div id="training" style="display:@Training.Visibility">
                     <!-- Formations -->
                     <h1>Formations</h1>
                     <div class="updown">
@@ -273,28 +273,43 @@
 
     public class Chapitre
     {
-        Action Clean = Reset;
         public string Visibility = "none";
         public bool AnimOn = false;
         public bool AnimOff = true;
 
-        public void Go()
+        public async void Go()
         {
-            Clean();
-            this.AnimOff = false;
-            this.AnimOn = true;
-        }
+        await VisibilityChecker();
+        this.AnimOff = false;
 
-        public static void Reset()
+        this.Visibility = "normal";
+        this.AnimOn = true;
+    }
+
+    public void GoInvisible()
+    {
+        this.Visibility = "none";
+    }
+
+    public static async Task<int> Reset()
+    {
+        foreach (Chapitre Chap in Chapitres)
         {
-            foreach (Chapitre Chap in Chapitres)
+            if (Chap.AnimOff == false && Chap.AnimOn == true)
             {
                 Chap.AnimOn = false;
                 Chap.AnimOff = true;
             }
         }
-
+        return 1;
     }
+    public static async Task<int> VisibilityChecker()
+    {
+        await Reset();
+        return 1;
+    }
+
+}
 
 
 
